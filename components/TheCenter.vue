@@ -24,15 +24,10 @@ export default {
     })
   },
   watch: {
-    async entered () {
+    async entered (val) {
       await this.$delay(500)
-      if (this.entered) {
-        this.flash()
-        this.enter()
-      } else {
-        this.flash()
-        this.leave()
-      }
+      this.flash()
+      val ? this.enter() : this.leave()
     }
   },
   methods: {

@@ -31,13 +31,9 @@ export default {
     })
   },
   watch: {
-    async entered () {
+    async entered (val) {
       await this.$delay(1100)
-      if (this.entered) {
-        this.enter()
-      } else {
-        this.leave()
-      }
+      val ? this.enter() : this.leave()
     }
   },
   methods: {
